@@ -6,6 +6,7 @@ let pokemonList = [
 ];
 
 for (let i = 0; i < pokemonList.length; i++){
+    //Highlighting Pokémons that are bigger than 0.7
     if (pokemonList[i].height > 0.6) {
         document.write(pokemonList[i].name + " " + "(height: " + pokemonList[i].height + ")" + " Wow, that\'s big!");
     } else {
