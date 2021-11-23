@@ -4,3 +4,21 @@ let pokemonList = [
     {name: 'Squirtle', height: 0.5, types: ['water']},
     {name: 'Caterpie', height: 0.3, types: ['bug']}
 ];
+
+for (let i = 0; i < pokemonList.length; i++){
+    document.write(pokemonList[i].name + " " + "(height: " + pokemonList[i].height + ")");
+    if (pokemonList[i].height > 0.6) {
+        document.write(pokemonList[i].name + " " + "(height: " + pokemonList[i].height + ")" + " Wow, that\'s big!");
+}
+}
+
+
+
+
+
+// if (pokemon[i].age <19 && person[i].age >13){  
+// }else if (person[i].age <13){
+//     console.log(person[i].name + " is a child");
+//   }else {
+//     console.log(person[i].name + " is an adult");
+//   }
