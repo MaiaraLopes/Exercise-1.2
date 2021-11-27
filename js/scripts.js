@@ -5,14 +5,13 @@ let pokemonList = [
     { name: 'Caterpie', height: 0.3, types: ['bug'] }
 ];
 
-for (let i = 0; i < pokemonList.length; i++) {
-    //Highlighting Pokémons that are bigger than 0.6
-    
-    document.write(pokemonList[i].name + " " + "(height: " + pokemonList[i].height + ")");
-    
-    if (pokemonList[i].height > 0.6) {
+//Highlighting Pokémons taller than 0.6
+function myList(pokemon) {
+    document.write(pokemon.name + " " + "(height: " + pokemon.height + ")");
+    if (pokemon.height > 0.6) {
         document.write(" Wow, that\'s big!");
-    
     }
     document.write('<br>');
+
 }
+pokemonList.forEach(myList);
