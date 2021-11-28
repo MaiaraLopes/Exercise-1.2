@@ -7,8 +7,8 @@ let pokemonRepository = (function () {
         { name: 'Caterpie', height: 0.3, types: ['bug'] }
     ];
 
-    function add(pokemon) {
-        pokemonList.push(pokemon);
+    function add(item) {
+        pokemonList.push(item);
     }
 
     function getAll() {
@@ -20,15 +20,20 @@ let pokemonRepository = (function () {
         getAll: getAll
     };
 
+    function addListItem(pokemon) {
+        let pokemonList = document.querySelector('.pokemon-list');
+        let listItem = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('button');
+        listItem.appendChild(button);
+        pokemonList.appendChild(listItem);
+    }
+
 })();
 
-//Highlighting Pokémons taller than 0.6
 function printPokemon(pokemon) {
-    document.write(pokemon.name + " " + "(height: " + pokemon.height + ")");
-    if (pokemon.height > 0.6) {
-        document.write(" Wow, that\'s big!");
-    }
-    document.write('<br>');
+    
 
 }
 pokemonRepository.getAll().forEach(printPokemon);
