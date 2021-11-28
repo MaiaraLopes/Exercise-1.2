@@ -15,25 +15,27 @@ let pokemonRepository = (function () {
         return pokemonList;
     }
 
-    return {
-        add: add,
-        getAll: getAll
-    };
-
     function addListItem(pokemon) {
         let pokemonList = document.querySelector('.pokemon-list');
         let listItem = document.createElement('li');
         let button = document.createElement('button');
         button.innerText = pokemon.name;
-        button.classList.add('button');
+        button.classList.add('button-class');
         listItem.appendChild(button);
         pokemonList.appendChild(listItem);
     }
 
+        return {
+        add: add,
+        getAll: getAll,
+        addListItem: addListItem
+    };
+
 })();
 
 function printPokemon(pokemon) {
+    pokemonRepository.addListItem(pokemon);
+    }
     
-
-}
 pokemonRepository.getAll().forEach(printPokemon);
+
