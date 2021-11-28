@@ -23,7 +23,7 @@ let pokemonRepository = (function () {
 })();
 
 //Highlighting Pokémons taller than 0.6
-function myList(pokemon) {
+function printPokemon(pokemon) {
     document.write(pokemon.name + " " + "(height: " + pokemon.height + ")");
     if (pokemon.height > 0.6) {
         document.write(" Wow, that\'s big!");
@@ -31,4 +31,4 @@ function myList(pokemon) {
     document.write('<br>');
 
 }
-pokemonRepository.getAll().forEach(myList);
+pokemonRepository.getAll().forEach(printPokemon);
