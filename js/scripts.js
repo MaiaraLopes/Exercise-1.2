@@ -77,9 +77,3 @@ pokemonRepository.loadList().then(function() {
     });
 });
 
-function addPokemonButton(pokemon) {
-    pokemonRepository.loadList(pokemon);
-    }
-
-pokemonRepository.getAll().forEach(addPokemonButton);
-
