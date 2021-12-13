@@ -90,6 +90,11 @@ let pokemonRepository = (function () {
 
 function hideModal() {
     modalContainer.classList.remove('is-visible');
+
+    if (dialogPromiseReject) {
+        dialogPromiseReject();
+        dialogPromiseReject = null;
+    }
 }
 
 window.addEventListener('keydown', function(e) {
@@ -103,11 +108,50 @@ modalContainer.addEventListener('click', function(e) {
     if (target === modalContainer) {
         hideModal();
     }
-});    
+});
+
+function showDialog(title, text) {
+    showModal(title, text);
+
+    let modalContainer = document.querySelector('#modal-container');
+    let modal = modalContainer.querySelector('.modal');
+    let confirmButton = document.createElement('button');
+    confirmButton.classList.add('modal-confirm');
+    confirmButton.innerText = 'Confirm';
+    let cancelButton = document.createElement('button');
+    cancelButton.classList.add('modal-cancel');
+    cancelButton.innerText = 'Cancel';
+
+    modal.appendChild(confirmButton);
+    modal.appendChild(cancelButton);
+
+    //Focus on the confirmButton so that the user can simply press Enter
+    confirmButton.focus();
+
+    return new Promise((resolve, reject), function() {
+        cancelButton.addEventListener('click', hideModal);
+        confirmButton.addEventListener('click', function() {
+            dialogPromiseReject = null;
+            hideModal();
+            resolve();
+        });
+
+        dialogPromiseReject = reject;
+    });
+}
 
 
 document.querySelector('#show-modal').addEventListener('click', function () {
     showModal('Modal title', 'This is the modal content!');
+});
+
+document.querySelector('#show-dialog').addEventListener('click', function() {
+    showDialog('Confirm action', 'Are you sure you want to do this?').then(function () {
+        alert('Confirmed!');
+    }, function() {
+        alert('Not confirmed!');
+    }
+    );
 });
 
 return {
