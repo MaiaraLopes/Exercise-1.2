@@ -63,7 +63,7 @@ let pokemonRepository = (function () {
     let modalContainer = document.querySelector('#modal-container');
 
     function showModal(title, text) {
-    modalContainer.interHTML = '';
+    modalContainer.innerHTML = '';
 
     let modal = document.createElement('div');
     modal.classList.add('modal');
@@ -90,7 +90,8 @@ let pokemonRepository = (function () {
 
 function hideModal() {
     modalContainer.classList.remove('is-visible');
-
+    let dialogPromiseReject;
+    
     if (dialogPromiseReject) {
         dialogPromiseReject();
         dialogPromiseReject = null;
@@ -128,7 +129,7 @@ function showDialog(title, text) {
     //Focus on the confirmButton so that the user can simply press Enter
     confirmButton.focus();
 
-    return new Promise((resolve, reject), function() {
+    return new Promise(function(resolve, reject) {
         cancelButton.addEventListener('click', hideModal);
         confirmButton.addEventListener('click', function() {
             dialogPromiseReject = null;
