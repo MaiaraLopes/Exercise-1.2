@@ -55,7 +55,8 @@ let pokemonRepository = (function () {
 
      function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
-            showModal(pokemon.name, pokemon.height, pokemon.imageUrl);
+            let height = pokemon.height * 10 + ' ' + 'cm';
+            showModal(pokemon.name, height, pokemon.imageUrl);
         });
         
     }
@@ -81,11 +82,10 @@ let pokemonRepository = (function () {
     contentElement.innerText = text;
 
     //Add Pokémon image to modal
-    
+
     let imageContainer = document.querySelector('#image-container');
     let imageElement = document.createElement('img');
-    imageElement.innerText = image;
-    image.src = pokemon.imageUrl;
+    imageElement.src = image;
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);

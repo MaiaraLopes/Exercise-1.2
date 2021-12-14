@@ -24,8 +24,9 @@
   background: #ffffff;
   padding: 15px;
   width: 100%;
-  max-width: 700px;
-  text-align: left;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 20px;
 }
 
 .modal-close {
@@ -39,10 +40,17 @@
 
 .modal h1 {
   margin-top: 0;
+  text-transform: capitalize;
 }
 
 .modal p {
   margin-bottom: 0;
+  font-size: 22px;
+}
+
+.modal img {
+  width: 170px;
+  height: auto;
 }
 
 .input-wrapper {
