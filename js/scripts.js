@@ -55,14 +55,14 @@ let pokemonRepository = (function () {
 
      function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
-            console.log(pokemon);
+            showModal(pokemon.name, pokemon.height, pokemon.imageUrl);
         });
         
     }
 
     let modalContainer = document.querySelector('#modal-container');
 
-    function showModal(title, text) {
+    function showModal(title, text, image) {
     modalContainer.innerHTML = '';
 
     let modal = document.createElement('div');
@@ -80,18 +80,27 @@ let pokemonRepository = (function () {
     let contentElement = document.createElement('p');
     contentElement.innerText = text;
 
+    //Add Pokémon image to modal
+    
+    let imageContainer = document.querySelector('#image-container');
+    let imageElement = document.createElement('img');
+    imageElement.innerText = image;
+    image.src = pokemon.imageUrl;
+
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
+    modal.appendChild(imageElement);
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add('is-visible');
 }
 
+let dialogPromiseReject;
+
 function hideModal() {
     modalContainer.classList.remove('is-visible');
-    let dialogPromiseReject;
-    
+        
     if (dialogPromiseReject) {
         dialogPromiseReject();
         dialogPromiseReject = null;
@@ -114,7 +123,6 @@ modalContainer.addEventListener('click', function(e) {
 function showDialog(title, text) {
     showModal(title, text);
 
-    let modalContainer = document.querySelector('#modal-container');
     let modal = modalContainer.querySelector('.modal');
     let confirmButton = document.createElement('button');
     confirmButton.classList.add('modal-confirm');
@@ -151,8 +159,7 @@ document.querySelector('#show-dialog').addEventListener('click', function() {
         alert('Confirmed!');
     }, function() {
         alert('Not confirmed!');
-    }
-    );
+    });
 });
 
 return {
