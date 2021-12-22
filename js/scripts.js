@@ -22,7 +22,7 @@ let pokemonRepository = (function () {
         button.classList.add('btn-outline-info');
         button.classList.add('text-capitalize');
         button.classList.add('button-class');
-        listItem.classList.add('group-list-item');
+        listItem.classList.add('list-group-item');
         button.addEventListener('click', function () {
             showDetails (pokemon);
         });    
@@ -76,9 +76,9 @@ let pokemonRepository = (function () {
     //Add new modal content
 
     let nameElement = $('<h1 class="text-capitalize">' + pokemon.name + '</h1>');
-    let imageElementFront = $('<img class="modal-img" style="width:50%">');
+    let imageElementFront = $('<img class="modal-img" style="width:50%"' + ' alt="' + pokemon.name + ' front image"' + '>');
     imageElementFront.attr("src", pokemon.imageUrlFront);
-    let imageElementBack = $('<img class="modal-img" style="width:50%">');
+    let imageElementBack = $('<img class="modal-img" style="width:50%"' + ' alt="' + pokemon.name + ' back image"' + '>');
     imageElementBack.attr("src", pokemon.imageUrlBack);
     let heightElement = $("<p>" + "Height: " + pokemon.height * 10 + " " + "cm" + "</p>");
     
