@@ -19,7 +19,10 @@ let pokemonRepository = (function () {
         button.dataset.target = '#exampleModalCenter';
         button.dataset.toggle = 'modal';
         button.innerText = pokemon.name;
+        button.classList.add('btn-outline-info');
+        button.classList.add('text-capitalize');
         button.classList.add('button-class');
+        listItem.classList.add('group-list-item');
         button.addEventListener('click', function () {
             showDetails (pokemon);
         });    
@@ -72,7 +75,7 @@ let pokemonRepository = (function () {
 
     //Add new modal content
 
-    let nameElement = $('<h1 class = "text-capitalize">' + pokemon.name + '</h1>');
+    let nameElement = $('<h1 class="text-capitalize">' + pokemon.name + '</h1>');
     let imageElementFront = $('<img class="modal-img" style="width:50%">');
     imageElementFront.attr("src", pokemon.imageUrlFront);
     let imageElementBack = $('<img class="modal-img" style="width:50%">');
