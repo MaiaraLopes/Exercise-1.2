@@ -19,9 +19,7 @@ let pokemonRepository = (function () {
         button.dataset.target = '#exampleModalCenter';
         button.dataset.toggle = 'modal';
         button.innerText = pokemon.name;
-        button.classList.add('btn-outline-info');
-        button.classList.add('text-capitalize');
-        button.classList.add('button-class');
+        button.classList.add('btn-outline-info', 'text-capitalize', 'button-class');
         listItem.classList.add('list-group-item');
         button.addEventListener('click', function () {
             showDetails (pokemon);
