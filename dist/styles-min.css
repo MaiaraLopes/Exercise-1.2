@@ -1,13 +1,1 @@
-body {
-  margin-top: 65px;
-}
-.pokemon-list li {
-  text-align: center;
-}
-.button-class {
-  padding: 8px;
-  margin: 10px;
-  border-radius: 10px;
-  max-width: 100%;
-  width: 300px;
-}
+body{margin-top:65px}.pokemon-list li{text-align:center}.button-class{padding:8px;margin:10px;border-radius:10px;max-width:100%;width:300px}
