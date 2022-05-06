@@ -15,5 +15,5 @@ https://pokeapi.co/api/v2/pokemon
 
 ## Screenshots
 
-[![1-Main.png](https://i.postimg.cc/hP9PNC69/1-Main.png)](https://postimg.cc/ppLHFB2T)
-[![2-Example.png](https://i.postimg.cc/8PPNn1dV/2-Example.png)](https://postimg.cc/MX4CnJrs)
+[![1-Main.png](https://i.postimg.cc/T3JS8mT7/1-Main.png)](https://postimg.cc/9Dz1ZDRZ)
+[![2-Example.png](https://i.postimg.cc/RCJDS2Mn/2-Example.png)](https://postimg.cc/JtmqK6H1)
