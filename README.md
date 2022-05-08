@@ -2,7 +2,7 @@
 # Pokédex
 This project gives you a list of 150 Pokémons. If you click on your favourite Pokémon, it will show you its name, front and back pictures, and height.
 
-The app is responsive and you can access it [here](https://awesome-wiles-8f3913.netlify.app/).
+The app is responsive and you can access it [here](https://ml-pokedex.netlify.app).
 
 ## Target Audience
 This is aimed at Pokémon fans and anyone who would like to learn more about them.
